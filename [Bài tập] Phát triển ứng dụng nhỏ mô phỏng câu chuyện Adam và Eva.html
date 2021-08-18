@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+    var Apple = function (weight) {
+        this.weight = weight;
+
+        this.setWeight = function (_weight) {
+            this.weight = _weight
+        };
+
+        this.getWeight = function () {
+            return this.weight
+        };
+
+        this.decrease = function () {
+            this.weight -= 1
+        };
+
+    };
+    
+    var Human = function (name, gender, weightbody, apple1) {
+        this.name = name;
+        this.gender = gender;
+        this.weightbody = 5;
+        this.apple1 = null;
+
+        this.gender = function (_appweight) {
+            this.apple1 = _appweight
+        };
+        this.setGender = function (_gender) {
+            this.gender = _gender
+        };
+
+        this.getGender = function () {
+            return this.gender
+        };
+
+
+        this.eat = function () {
+            if (this.apple1.getWeight() > 0 ){
+                this.apple1.decrease();
+                this.weightbody = this.weightbody +=1;
+                console.log("cân nặng tăng    " + this.weightbody + "    quả táo còn lại   " + this.apple1.getWeight())
+            }else {
+                console.log("Quả táo đã hết")
+            }
+        };
+
+        this.say = function () {
+            console.log("Adam và Eva là những con người đầu tiên, trong vườn địa đàng có một cây táo ra những quả táo chín mọng. Adam và Eva lấy một quả táo và ăn, mỗi người ăn một miếng táo cho đến khi hết!")
+        };
+
+        this.setName = function () {
+            var  name = prompt("nhập tên");
+            console.log("tên bạn là " + name )
+        };
+
+    };
+
+    var apple2 = new Apple(10);
+    var human = new Human("Adam", "man", 9);
+    human.gender(apple2);
+     function aa() {
+         human.eat()
+     }
+     function say() {
+         human.say()
+     }
+     function setname() {
+         human.setName()
+     }
+</script>
+<button type="button " onclick="aa()" >eat</button>
+<button type="button" onclick="say()">say</button>
+<button type="button" onclick="setname()">setname</button>
+</body>
+</html>
